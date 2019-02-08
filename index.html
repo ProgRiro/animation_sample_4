@@ -1,73 +1,78 @@
-<style>
-	.container {
-		display: flex;
-		justify-content: center;
-		align-items: center;
-	}
+    <style>
+    .container {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-around;
+        align-items: center;
+        border: 2px solid black;
+        margin: 25px auto;
+        height: 600px;
+        width: 800px;
+    }
 
-	.circleBox {
-		position: relative;
-		width: 800px;
-		height: 500px;
-		border: 2px solid black;
-		margin: 50px;
-	}
+    .circleParent {
+        position: relative;
+        width: 300px;
+        height: 300px;
+        border: 2px solid black;
+        border-radius: 50%;
+    }
 
-	.circle {
-		position: absolute;
-		top: 50px;
-		left: 375px;
-		width: 50px;
-		height: 50px;
-		background-color: red;
-		border-radius: 50%;
-	}
+    .circle {
+        position: absolute;
+        top: -25px;
+        left: 125px;
+        width: 50px;
+        height: 50px;
+        border-radius: 50%;
+        background: rgba(255, 0, 0, .8);
+        transform-origin: center 175px;
+    }
 
-	@keyframes moveX {
-		0% {
-			transform: translateY(0);
-		}
+    .circle:nth-last-of-type(1) {
+        animation: rotate 2s ease-in-out 0s infinite normal;
+    }
 
-		25% {
-			transform: translateX(300px) translateY(300px);
-		}
+    .circle:nth-last-of-type(2) {
+        animation: rotate 2s ease-in-out .1s infinite normal;
+    }
 
-		75% {
-			transform: translateX(-300px) translateY(300px);
-		}
+    .circle:nth-last-of-type(3) {
+        animation: rotate 2s ease-in-out .2s infinite normal;
+    }
 
-		100% {
-			transform: translateX(0);
-		}
-	}
+    .circle:nth-last-of-type(4) {
+        animation: rotate 2s ease-in-out .3s infinite normal;
+    }
 
-	.circle:nth-of-type(1) {
-		animation: moveX 2s ease-in-out 0s infinite;
-	}
+    .circle:nth-last-of-type(5) {
+        animation: rotate 2s ease-in-out .4s infinite normal;
+    }
 
-	.circle:nth-of-type(2) {
-		animation: moveX 2s ease-in-out .1s infinite;
-	}
+    @keyframes rotate {
+        0% {
+            transform: rotate(0);
+            opacity: .8;
+        }
 
-	.circle:nth-of-type(3) {
-		animation: moveX 2s ease-in-out .2s infinite;
-	}
+        50% {
+            opacity: .2;
+        }
 
-	.circle:nth-of-type(4) {
-		animation: moveX 2s ease-in-out .3s infinite;
-	}
-
-	.circle:nth-of-type(5) {
-		animation: moveX 2s ease-in-out .4s infinite;
-	}
+        100% {
+            transform: rotate(360deg);
+            opacity: .8;
+        }
+    }
 </style>
 
 <div class="container">
-	<div class="circleBox">
-		<div class="circle"></div>
-		<div class="circle"></div>
-		<div class="circle"></div>
-		<div class="circle"></div>
-		<div class="circle"></div>
-	</div>
+    <div class="circleParent">
+        <div class="circle"></div>
+        <div class="circle"></div>
+        <div class="circle"></div>
+        <div class="circle"></div>
+        <div class="circle"></div>
+    </div>
+    <p>rotate animation</p>
 </div>
